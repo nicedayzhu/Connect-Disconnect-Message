@@ -1,5 +1,5 @@
 #include <sourcemod>
-#include <colors>
+#include <multicolors> //fix CPrintToChatAll crash
 #include <geoip>
 
 #pragma semicolon 1
@@ -8,9 +8,9 @@
 public Plugin myinfo = 
 {
 	name = "Connect/Disconnect Message", 
-	author = "X Matei X, ByDexter", 
+	author = "X Matei X, ByDexter, nicedayzhu", 
 	description = "A simple connect/disconnect message for players.", 
-	version = "1.1", 
+	version = "1.2", 
 	url = "forums.alliedmods.net", 
 };
 
@@ -27,10 +27,9 @@ public void OnClientPutInServer(int client)
 	GetClientIP(client, IP, sizeof(IP), true);
 	if (!GeoipCountry(IP, Country, sizeof Country))
 	{
-		Country = "BOT";
+		Country = "UnknownCountry";
 	}
 	CPrintToChatAll("%t", "Connect", name, authid, Country);
-	
 }
 
 public void OnClientDisconnect(int client)
@@ -41,7 +40,7 @@ public void OnClientDisconnect(int client)
 	GetClientIP(client, IP, sizeof(IP), true);
 	if (!GeoipCountry(IP, Country, sizeof Country))
 	{
-		Country = "BOT";
+		Country = "UnknownCountry";
 	}
 	CPrintToChatAll("★ {green}CSGO {default}➜ {purple}%s {blue}(%s) {default}disconnected from {green}(%s)", "Disconnect", name, authid, Country);
 } 
