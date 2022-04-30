@@ -1,0 +1,13 @@
+"Phrases"
+{
+	"Connect"
+	{
+		"#format"		"{1:s},{2:s},{3:s}"
+		"en"			"★ {green}CSGO {default}➜ {purple}{1} {blue}({2}) {default}加入游戏 来自 {green}({3})"
+	}
+	"Disconnect"
+	{
+		"#format"		"{1:s},{2:s},{3:s}"
+		"en"			"★ {green}CSGO {default}➜ {purple}{1} {blue}({2}) {default}离开游戏 来自 {green}({3})"
+	}
+}
