@@ -42,5 +42,5 @@ public void OnClientDisconnect(int client)
 	{
 		Country = "UnknownCountry";
 	}
-	CPrintToChatAll("★ {green}CSGO {default}➜ {purple}%s {blue}(%s) {default}disconnected from {green}(%s)", "Disconnect", name, authid, Country);
+	CPrintToChatAll("%t", "Disconnect", name, authid, Country);
 } 
